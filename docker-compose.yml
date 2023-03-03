@@ -1,0 +1,15 @@
+version: "3.0"
+
+services:
+    transmission:
+        container_name: transmission     
+        image: transmission:1
+        platform: linux/arm
+        hostname: transmission
+        stdin_open: true
+        tty: true
+        privileged: true
+        volumes:
+            - /my_directory/share:/root/transmission/share
+        ports:
+            - "9091:9091"
